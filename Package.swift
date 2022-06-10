@@ -4,12 +4,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "ADBMobileSPM",
+    name: "ADBMobilePackage",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "ADBMobileSPM",
-            targets: ["AdobeMobile"]),
+            name: "ADBMobileLib",
+            targets: ["AdobeMobile"]
+        ),
     ],
     targets: [
         .binaryTarget(

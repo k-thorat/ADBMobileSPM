@@ -9,18 +9,13 @@ let package = Package(
     products: [
         .library(
             name: "ADBMobileSPM",
-            type: .dynamic,
-            targets: ["ADBMobileSPM", "AdobeMobile"]
+            targets: ["AdobeMobile"]
         )
     ],
     targets: [
         .binaryTarget(
             name: "AdobeMobile",
             path: "Sources/AdobeMobile.xcframework"
-        ),
-        .target(
-            name: "ADBMobileSPM",
-            dependencies: ["AdobeMobile"]
         )
     ]
 )

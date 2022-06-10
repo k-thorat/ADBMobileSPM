@@ -4,18 +4,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "ADBMobilePackage",
+    name: "ADBMobileSPM",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "ADBMobileLib",
-            targets: ["AdobeMobile"]
-        ),
+            name: "ADBMobileSPM",
+            type: .dynamic,
+            targets: ["ADBMobileSPM", "AdobeMobile"]
+        )
     ],
     targets: [
         .binaryTarget(
             name: "AdobeMobile",
             path: "Sources/AdobeMobile.xcframework"
+        ),
+        .target(
+            name: "ADBMobileSPM",
+            dependencies: ["AdobeMobile"]
         )
     ]
 )
